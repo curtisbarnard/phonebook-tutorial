@@ -51,7 +51,7 @@ app.get('/info', (req, res) => {
     const now = new Date()
     res.send(`
     <p>Phonebook has info for ${numOfEntries} people</p>
-    <p>now</p>
+    <p>${now}</p>
     `)
 })
 

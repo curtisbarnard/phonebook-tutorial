@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/curtisbarnard/phonebook-tutorial/issues"
   },
-  "homepage": "https://github.com/curtisbarnard/phonebook-tutorial#readme"
+  "homepage": "https://github.com/curtisbarnard/phonebook-tutorial#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
 }

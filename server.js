@@ -66,6 +66,14 @@ app.get('/api/persons/:id', (req, res) => {
   }
 });
 
+// Delete info for a single person
+app.delete('/api/persons/:id', (req, res) => {
+  const id = req.params.id;
+  phonebook = phonebook.filter((item) => item.id !== +id);
+  console.log(phonebook);
+  res.status(204).end();
+});
+
 // Listen with server
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);

@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const PORT = 3001;
 
+// middleware
+app.use(express.json());
+
 // Phonebook sample data
 let phonebook = [
   {
@@ -52,6 +55,19 @@ app.get('/info', (req, res) => {
 
 // Get entire phonebook
 app.get('/api/persons', (req, res) => {
+  res.json(phonebook);
+});
+
+// Create a new entry
+app.post('/api/persons', (req, res) => {
+  const newId = Math.ceil(Math.random() * 10000);
+  const newEntry = {
+    id: newId,
+    name: req.body.name,
+    number: req.body.number,
+  };
+  phonebook.push(newEntry);
+  console.log(phonebook);
   res.json(phonebook);
 });
 
